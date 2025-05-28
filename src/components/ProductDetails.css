@@ -1,0 +1,100 @@
+.product-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .product-page img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  } 
+}
+
+.product-page .rate {
+  align-items: center;
+  margin: 10px 0;
+}
+
+.stars svg {
+  height: 18px;
+  color: #ffcd4e;
+  margin: 5px 5px 5px 0;
+}
+@media (max-width: 767px) {
+  .stars svg {
+    height: 12px;
+    color: #ffcd4e;
+    margin: 5px 5px 5px 0;
+  } 
+}
+
+.product-page .info {
+  display: flex;
+  align-items: center;
+}
+
+.product-page .info .price {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.product-page p {
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+.product-page .cantidad-input {
+  width: 150px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px 0;
+  color: black;
+  font-size: 15px;
+}
+@media (max-width: 767px) {
+  .product-page .cantidad-input {
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+  }
+}
+
+
+.product-page button.add {
+  background-color: #518fd5;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 1.0em;
+  font-family: "Racing Sans One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@media (max-width: 767px) {
+  .product-page button.add {
+    font-size: 0.8em;
+  }
+}
+
+
+.product-page .description {
+    text-align: left;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #518fd5;
+    border-bottom: 1px solid #518fd5;
+    overflow-y: auto;
+    height: 200px;
+}
+
+.product .description em {
+    font-style: normal;
+}
+
+

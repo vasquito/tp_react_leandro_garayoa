@@ -1,0 +1,16 @@
+.wrapper {
+  text-align: center;
+  background-color: white;
+}
+
+.wrapper .row {
+  justify-content: center;
+}
+
+.wrapper .feature {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid gray;
+  background-color: "#d6e5fb";
+  border-radius: 10px;
+}
