@@ -20,7 +20,7 @@ Ver en vivo en [Proyecto en Vivo]() (en progreso)
 
 1. Clonar mi repositorio
 ```bash
-git clone https://github.com/.........git
+git clone https://github.com/vasquito/tp_react_leandro_garayoa.git
 ```
 
 2. Instalar dependencias
