@@ -1,13 +1,12 @@
+# Comics Lean
+
 # Trabajo Practico - REACT - Preentrega 
----
 Alumno: Leandro Garayoa
 
 ## Live
----
 Ver en vivo en [Proyecto en Vivo]() (en progreso)
 
 ## Funcionalidades implementadas
----
 - Layout
 - Manejo de estados y efectos
 - Conexion a API Externa
@@ -18,7 +17,6 @@ Ver en vivo en [Proyecto en Vivo]() (en progreso)
 - API Externa - Fake API creada por el alumno
 
 ## Install NPM Packages
----
 
 1. Clonar mi repositorio
 ```bash
@@ -45,7 +43,6 @@ npm run dev
 ```
 
 ## Colores para comics
----
 #F02B2B
 #F2D324
 #000080
