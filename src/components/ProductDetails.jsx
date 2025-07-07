@@ -1,16 +1,16 @@
 import { useState, useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import "./ProductDetails.css";
+import { CartContext } from "../context/products/CarritoContext";
 import { Col, Container, Row } from "react-bootstrap";
 import { toast } from "react-toastify";
-import "./ProductDetails.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 const ProductDetails = ({ selectedProduct }) => {
-  const {addNumToCart } = useContext(CartContext);
-
+  const { addNumToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
+  
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
   };

@@ -5,11 +5,11 @@ import { Container } from "react-bootstrap";
 import Banner from "../components/Banner";
 import Wrapper from "../components/Wrapper";
 import ShopList from "../components/ShopList";
-import { CartContext } from "../context/CartContext";
-import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
+import { ProductsContext } from "../context/products/ProductsContext";
+import useWindowScrollToTop from "../utils/useWindowScrollToTop";
 
 const Products=()=> {
-    const {products, isLoading, error, addToCart } = useContext(CartContext);
+    const {products, isLoading, error } = useContext(ProductsContext);  
     useWindowScrollToTop();
 
     if (isLoading) return <span className="loading loading-spinner text-primary mx-auto block mt-8"></span>;

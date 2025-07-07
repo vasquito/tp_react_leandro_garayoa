@@ -12,12 +12,6 @@
   height: 150px;
 }
 
-.cart-items h4 span {
-  color: #0f3460;
-  margin-left: 20px;
-  font-weight: 500;
-}
-
 .cart-total h4 {
   font-size: 18px;
   font-weight: 400;
@@ -52,12 +46,30 @@
   padding: 20px;
 }
 
+.cart-list .header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #0f3460;
+}
+.cart-list .item {
+  text-align: center;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .cart-list .header {
+    font-size: 10px;
+  }
+  .cart-list .item {
+    font-size: 10px;
+  }
+}
+
 .cart-list .image-holder {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .cart-items img {
   width: 90%;
   height: 90%;
@@ -68,32 +80,11 @@
   .cart-items .container > .row {
     flex-wrap: wrap-reverse !important;
   }
-}
-
-.cart-items .cart-content {
-  align-items: flex-end;
-}
-
-.cart-items .cart-details h3 {
-  font-size: 20px;
-  font-weight: 500;
-  width: fit-content;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.cart-items .cart-details h4 {
-  font-size: 15px;
-  font-weight: 400;
-  margin-top: 50px;
-  color: grey;
-  width: fit-content;
-}
-
-.cart-items h4 span {
-  color: #0f3460;
-  margin-left: 20px;
-  font-weight: 500;
+  .cart-items img {
+    width: 120%;
+    height: 100%;
+    max-width: 150px;
+  }
 }
 
 .cartControl {
@@ -101,14 +92,20 @@
   gap: 5px;
   justify-content: center;
 }
-
-
-
 .cartControl button {
   width: 40px;
   height: 40px;
   border-radius: 5px;
   font-size: 24px;
+}
+
+@media (max-width: 767px) {
+  .cartControl button {
+    width: 20px;
+    height: 20px;
+    border-radius: 2,5px;
+    font-size: 10px;
+  }
 }
 
 button.addCart {
@@ -123,35 +120,12 @@ button.desCart {
     color: #bf4f4f;
 }
 
-button.delete {
-  position: absolute;
-  right: 10px;
-  top: 20px;
-  width: max-content;
-  border: 1px solid #999;
-  border-radius: 5px;
-  outline: none;
-  background-color: #bf4f4f;
-  color: white;
-}
-
 button.vaciar {
   border: 1px solid #bf4f4f;
   border-radius: 5px;
-  background-color: transparent;
-  color: #bf4f4f;
+  background-color: #bf4f4f;
+  color: white;
 }
-
-@media (max-width: 575px) {
-  .cart-content .cart-details h3 {
-    margin: 10px auto;
-  }
-
-  .cart-content .cart-details h4 {
-    margin: 10px auto;
-  }
-}
-
 
 .cart-items .vaciar-carrito {
   margin-top: 20px;

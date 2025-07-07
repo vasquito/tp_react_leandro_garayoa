@@ -1,12 +1,16 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { Navigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 import { Col, Container, Row } from "react-bootstrap";
 
-export const useAuth = () => {
-    const { loggedIn } = useContext(CartContext);
-    return { loggedIn };
-};
-export const authRoutesProtection = (Component) => {
+export default function ProtectedRoute({ children }) 
+{
+  const { loggedIn } = useAuth();
+  return loggedIn ? children : <Navigate to="/" />;
+}
+
+/*
+export const ProtectedRoute = (Component) => {
     return (props) => {
         const { loggedIn } = useAuth();
 
@@ -27,4 +31,5 @@ export const authRoutesProtection = (Component) => {
         return <Component {...props} />;
     };
 };
-export default authRoutesProtection;
+export default AuthRoutesProtection;
+*/

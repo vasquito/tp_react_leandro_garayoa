@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import "./Navbar.css";
 import logo from "../assets/images/logo.png";
 import { Navbar,Nav,Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping} from '@fortawesome/free-solid-svg-icons';
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../context/products/CarritoContext";
+import { AuthContext } from "../context/security/AuthContext";
 import LogInButton from "./LogInButton";
 import LogOutButton from "./LogoutButton";
 
 
 const Navegacion = () => {
-  const {cartItems} = useContext(CartContext);
-  const isLoggedIn = useContext(CartContext).loggedIn;
+
+  const { cartItems } = useContext(CartContext);
+  const isLoggedIn = useContext(AuthContext).loggedIn;
   const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const [expand, setExpand] = useState(false);

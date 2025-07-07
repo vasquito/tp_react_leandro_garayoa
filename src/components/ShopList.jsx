@@ -13,7 +13,6 @@ const ShopList = ({ products }) => {
         return (
           <ProductCard
             key={productItem.id}
-            title={productItem.title}
             productItem={productItem}
           />
         );

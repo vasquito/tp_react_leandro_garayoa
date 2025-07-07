@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { Container } from "react-bootstrap"
 import SlideCard from "./SlideCard"
 import "./SlideCard.css";
-import { CartContext } from "../context/CartContext";
+import { ProductsContext } from "../context/products/ProductsContext";
 
 const SliderHome = () => {
   const settings = {
@@ -17,7 +17,7 @@ const SliderHome = () => {
     autoplay: true,
   }
   
-  const {news, isLoading, error } = useContext(CartContext);
+  const {news, isLoading, error} = useContext(ProductsContext);
   
   if (isLoading) return <span className="loading loading-spinner text-primary mx-auto block mt-8"></span>;
   if (error) return <p className="text-error text-center mt-8">Error al cargar la lista de novedades: {error}</p>;

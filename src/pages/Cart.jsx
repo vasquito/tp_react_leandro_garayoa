@@ -1,8 +1,8 @@
-import { useEffect, useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
+import { CartContext } from "../context/products/CarritoContext";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Cart.css";
-import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
+import useWindowScrollToTop from "../utils/useWindowScrollToTop";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdd, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,49 +22,46 @@ const Cart = () => {
               <h1 className="no-items product">No hay articulos añadidos al pedido</h1>
             )}
             {
-              cartItems.map((item) => {
-                const productQty = item.price * item.quantity;
-                return (
-                  <div className="cart-list" key={item.id}>
-                    <Row>
-                      <Col className="image-holder" sm={4} md={3}>
-                        <img src={item.cover} alt="" />
-                      </Col>
-                      <Col sm={8} md={9}>
-                        <Row className="cart-content">
-                          <Col xs={12} sm={9} className="cart-details">
-                            <h3>{item.title}</h3>
-                            <h4>
-                              ${item.price}.00 * {item.quantity}
-                              <span>${productQty}.00</span>
-                            </h4>
-                          </Col>
-                          <Col xs={12} sm={3} className="cartControl">
-                            <button
-                              className="addCart"
-                              onClick={() => addToCart(item)}
-                            >
-                              <FontAwesomeIcon icon={faAdd}/>
-                            </button>
-                            <button
-                              className="desCart"
-                              onClick={() => decreaseQuantity(item.id)}
-                            >
-                              <FontAwesomeIcon icon={faTimes}/>
-                            </button>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <button
-                        className="delete"
-                        onClick={() => removeFromCart(item.id)}
-                      >
-                        Eliminar Producto
-                      </button>
-                    </Row>
-                  </div>
-                );
-              })
+              cartItems.length > 0 && (
+                <div className="cart-list" >
+                  <Row >
+                    <Col className="header">Imagen</Col>
+                    <Col className="header">Titulo</Col>
+                    <Col className="header">Precio</Col>
+                    <Col className="header">Cantidad</Col>
+                    <Col className="header">Total</Col>
+                    <Col></Col>
+                  </Row>
+                  {
+                    cartItems.map((item) => {
+                      const productQty = item.price * item.quantity;
+                      return (
+                          <Row >
+                            <Col className="image-holder"><img src={item.cover} alt="" /></Col>
+                            <Col className="item">{item.title}</Col>
+                            <Col className="item">${item.price}.00</Col>
+                            <Col className="item">{item.quantity}</Col>
+                            <Col className="item">${productQty}.00</Col>
+                            <Col className="cartControl">
+                                  <button
+                                    className="addCart"
+                                    onClick={() => addToCart(item)}
+                                  >
+                                    <FontAwesomeIcon icon={faAdd}/>
+                                  </button>
+                                  <button
+                                    className="desCart"
+                                    onClick={() => decreaseQuantity(item.id)}
+                                  >
+                                    <FontAwesomeIcon icon={faTimes}/>
+                                  </button>
+                              </Col>
+                          </Row>
+                      );
+                    })
+                  }
+                </div>
+              )
             }
           </Col>
           <Col md={4}>
@@ -80,7 +77,9 @@ const Cart = () => {
                 <button onClick={clearCart} className="vaciar">
                   Vaciar carrito
                 </button>
+      
               )}
+              <br/><br/>
             </div>
           </Col>
         </Row>

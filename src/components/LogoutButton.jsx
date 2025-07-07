@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { AuthContext } from "../context/security/AuthContext";
 
 
 function LogOutButton() {
-    const { setLoggedIn } = useContext(CartContext);
+    const { setLoggedIn } = useContext(AuthContext);
 
     const handleLogout = () => {
         // Simular logout

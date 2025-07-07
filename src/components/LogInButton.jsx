@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { AuthContext } from "../context/security/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 function LogInButton() {
-  const { setLoggedIn } = useContext(CartContext);
+  const navigate = useNavigate();
+  //const { setLoggedIn } = useContext(AuthContext);
 
   const handleLogin = () => {
     // Simular login
-    setLoggedIn(true);
+    //setLoggedIn(true);
+    //console.log("Login habilitado")
+    navigate("/login");
   };
 
   return (

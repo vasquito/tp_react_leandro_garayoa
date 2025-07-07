@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.loginSection {
+    border-radius: 5px;
+    margin: 40px;
+    padding-top: 30px !important;  
+    background: #f6f9fc;
+    padding-bottom: 30px !important;  
+}
+
+.loginSection .box {
+  position: relative;
+  background: white;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.loginSection .box .info {
+    flex: 1 0 50%;
+    padding: 10px;
+}
+
+.loginSection .box .title {
+    border-bottom: 1px solid #518fd5;
+    text-align: left;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;    
+}
+
+.loginSection .box .issue-title {
+    font-size: 1.7em;
+    font-family: "Racing Sans One", serif;
+    font-weight: normal;
+    font-style: normal;
+    margin-bottom: 0px;
+}
+
+.loginSection .btnIngresar {
+    background-color: #518fd5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: "Racing Sans One", serif;
+    font-weight: 400;
+    font-style: normal;
+}

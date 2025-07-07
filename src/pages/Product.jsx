@@ -1,23 +1,13 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { useParams } from "react-router-dom";
+import useWindowScrollToTop from "../utils/useWindowScrollToTop";
+import getProduct from "../context/products/ProductsContext";
 import Banner from "../components/Banner";
 import ProductDetails from "../components/ProductDetails";
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
-import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 
 const Product = () => {
-  const { id } = useParams();
-  const [selectedProduct, setSelectedProduct] = useState([]);
-  const {products} = useContext(CartContext);
-
-  useEffect(() => {
-    setSelectedProduct(
-      products.filter((item) => parseInt(item.id) === parseInt(id))[0]
-    );
-    
-    window.scrollTo(0, 0); 
-  }, [products, selectedProduct, id]);
+  const {id} = useParams();
+  const selectedProduct = getProduct(id);
   useWindowScrollToTop();
 
   return (

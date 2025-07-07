@@ -1,15 +1,17 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import "./ProductCard.css";
+import { CartContext } from "../context/products/CarritoContext";
+import { ProductsContext } from "../context/products/ProductsContext";
 import { Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
-import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faStar } from '@fortawesome/free-solid-svg-icons';
 
-const ProductCard = ({title, productItem }) => {
-  const {isLoading, error, addToCart } = useContext(CartContext);
+const ProductCard = ({productItem}) => {
+  const { addToCart } = useContext(CartContext);
+  const { isLoading, error } = useContext(ProductsContext);
 
   const router = useNavigate();
   const handelClick = () => {
