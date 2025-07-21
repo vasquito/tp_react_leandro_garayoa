@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { AuthContext } from "../context/security/AuthContext";
 
 
@@ -11,9 +13,9 @@ function LogOutButton() {
     };
 
     return (
-        <div>
-            <button className="logout" onClick={handleLogout}>Log Out</button>
-        </div>
+        <Nav.Link as={Link} to="/" onClick={handleLogout} className="navbar-link" aria-label="Ir a login">
+            <span className="nav-link-label">Cerrar Sesión</span>
+        </Nav.Link>
     )
 }
 

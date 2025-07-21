@@ -1,0 +1,20 @@
+/* Navbar Section  */
+.nav {
+  background-color: #F2D324;
+}
+
+.nav-link-label-menu {
+  color: #F02B2B;
+  font-size: 36px !important;
+}
+
+@media (max-width: 990px) {
+  .nav-link-label-menu {
+    font-size: 24px !important;
+  }
+}
+@media (max-width: 767px) {
+  .nav-link-label-menu {
+    font-size: 20px !important;
+  }
+}

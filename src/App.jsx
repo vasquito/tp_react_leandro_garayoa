@@ -1,4 +1,5 @@
-import NavBar from './components/Navbar';
+import Header from './components/Header';
+import Menu from './components/Menu';
 import Footer from './components/Footer';
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
@@ -30,7 +31,8 @@ function App() {
             />
         <Router>
           <div id="header">
-            <NavBar/>
+            <Header/>
+            <Menu />
           </div>
           <div id="content">
             <Routes>

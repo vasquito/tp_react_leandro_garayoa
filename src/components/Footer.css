@@ -19,6 +19,7 @@ footer h2 {
 
 footer .row {
   justify-content: center;
+  text-align: center;
 }
 
 footer p {
@@ -29,6 +30,7 @@ footer p {
 
 footer h2 {
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 footer .logo {

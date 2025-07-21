@@ -1,10 +1,10 @@
 # Comics Lean
 
-# Trabajo Practico - REACT - Preentrega 
+# Trabajo Practico - REACT 
 Alumno: Leandro Garayoa
 
 ## Live
-Ver en vivo en [Proyecto en Vivo]() (en progreso)
+Ver en vivo en [Proyecto en Vivo]() (https://tp-react-leandro-garayoa.vercel.app)
 
 ## Funcionalidades implementadas
 - Layout
@@ -14,7 +14,11 @@ Ver en vivo en [Proyecto en Vivo]() (en progreso)
 - Carrito de Compras
 - Rutas protegidas
 - Rutas dinámicas
-- API Externa - Fake API creada por el alumno
+- API Externa - MockAPI 
+- 
+
+
+
 
 ## Install NPM Packages
 
@@ -34,6 +38,8 @@ npm install @fortawesome/fontawesome-svg-core
 npm install @fortawesome/free-solid-svg-icons
 npm install @fortawesome/react-fontawesome
 npm install react-toastify
+npm install react-multi-carousel
+npm install sweetalert2
 ```
 
 3. Levantar la app en modo DEV

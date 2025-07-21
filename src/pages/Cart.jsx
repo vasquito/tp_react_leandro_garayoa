@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { CartContext } from "../context/products/CarritoContext";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Cart.css";
-import useWindowScrollToTop from "../utils/useWindowScrollToTop";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdd, faTimes } from '@fortawesome/free-solid-svg-icons';
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const { cartItems, addToCart, decreaseQuantity, removeFromCart, clearCart } = useContext(CartContext);
@@ -12,7 +12,16 @@ const Cart = () => {
         .reduce((price, item) => price + item.price * item.quantity, 0)
         .toFixed(2);
 
-  useWindowScrollToTop();
+  const pagar = () => {
+    Swal.fire({
+      title: "¡Gracias por tu compra!",
+      text: `Total: $${total.toLocaleString()}`,
+      icon: "success",
+    });
+    clearCart();
+  };
+
+
   return (
     <section className="cart-items">
       <Container >
@@ -24,8 +33,8 @@ const Cart = () => {
             {
               cartItems.length > 0 && (
                 <div className="cart-list" >
-                  <Row >
-                    <Col className="header">Imagen</Col>
+                  <Row className="table-dark">
+                    <Col className="header">Foto</Col>
                     <Col className="header">Titulo</Col>
                     <Col className="header">Precio</Col>
                     <Col className="header">Cantidad</Col>
@@ -77,7 +86,11 @@ const Cart = () => {
                 <button onClick={clearCart} className="vaciar">
                   Vaciar carrito
                 </button>
-      
+              )}&nbsp;&nbsp;&nbsp;
+              {cartItems.length > 0 && (
+                <button onClick={pagar} className="pagar">
+                  Pagar
+                </button>
               )}
               <br/><br/>
             </div>

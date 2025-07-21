@@ -132,3 +132,12 @@ button.vaciar {
   padding-top: 10px;
   text-align: center;
 }
+
+button.pagar {
+  border: 1px solid #F02B2B;
+  border-radius: 5px;
+  background-color: #F02B2B;
+  color: #F2D324;
+  font-size: 24px;
+  font-weight: bold;
+}

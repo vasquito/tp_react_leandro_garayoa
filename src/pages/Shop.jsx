@@ -3,7 +3,6 @@ import "./Shop.css"
 import { Fragment, useContext} from "react";
 import { Container } from "react-bootstrap";
 import Banner from "../components/Banner";
-import Wrapper from "../components/Wrapper";
 import ShopList from "../components/ShopList";
 import { ProductsContext } from "../context/products/ProductsContext";
 import useWindowScrollToTop from "../utils/useWindowScrollToTop";
@@ -18,7 +17,7 @@ const Products=()=> {
     return (
       <Fragment>
         <Banner title={"Libros / Historietas"} />
-        <Wrapper />
+        {/*<Wrapper />*/}
         <section className="shop">
           <Container>
             <ShopList products={products} />
