@@ -7,3 +7,11 @@ const useWindowScrollToTop = () => {
 };
 
 export default useWindowScrollToTop;
+
+
+// Función para capitalizar cada palabra
+function capitalizeWords(str) {
+  return str.replace(/\w\S*/g, (w) =>
+    w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+  );
+}

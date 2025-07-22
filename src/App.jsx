@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
-import Admin from "./pages/Admin";
+import AdmProducts from "./pages/AdmProducts";
 import Login from "./pages/Login";
 import { AuthProvider } from "./context/security/AuthContext";
 import ProtectedRoute from "./context/security/ProtectedRoute";
@@ -39,9 +39,9 @@ function App() {
                 <Route path='/' element={<Home/>}  />
                 <Route path='/shop' element={<Shop/>}  />
                 <Route path="/shop/:id" element={<Product />} />
-                <Route path="/admin" element={
+                <Route path="/admProducts" element={
                   <ProtectedRoute>
-                     <Admin /> 
+                     <AdmProducts /> 
                   </ProtectedRoute>
                 } />
                 <Route path='/cart' element={

@@ -5,16 +5,16 @@
 
 .nav-link-label-menu {
   color: #F02B2B;
-  font-size: 36px !important;
+  font-size: 20px !important;
 }
 
 @media (max-width: 990px) {
   .nav-link-label-menu {
-    font-size: 24px !important;
+    font-size: 16px !important;
   }
 }
 @media (max-width: 767px) {
   .nav-link-label-menu {
-    font-size: 20px !important;
+    font-size: 14px !important;
   }
 }

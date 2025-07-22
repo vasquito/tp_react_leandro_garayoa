@@ -59,7 +59,7 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item>
               {isLoggedIn && (
-                    <Nav.Link as={Link} className="navbar-link" to="/admin" onClick={() => setExpand(false)}><span className="nav-link-label">Adm. Productos</span></Nav.Link>
+                    <Nav.Link as={Link} className="navbar-link" to="/admProducts"><span className="nav-link-label">Adm. Productos</span></Nav.Link>
                   )}
             </Nav.Item>      
             <Nav.Item >

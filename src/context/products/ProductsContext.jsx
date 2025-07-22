@@ -9,13 +9,15 @@ export function ProductsProvider ({ children }) {
     const [products, setProducts] = useState([]);
     const [news, setNews] = useState([]);
 
+    const API_URL_PRODUCTS = "https://685340fb0594059b23d07cd8.mockapi.io/api/productos";
+    const API_URL_NEWS = "https://685340fb0594059b23d07cd8.mockapi.io/api/novedades";
 
     // Fetch de libros desde mi json sobre el contexto
     useEffect(() => {
         setIsLoading(true);
-        fetch("https://685340fb0594059b23d07cd8.mockapi.io/api/productos")
+        fetch(API_URL_PRODUCTS)
             .then((res) => {
-                if (!res.ok) throw new Error("Error de carga, status:" + response.status);
+                if (!res.ok) throw new Error("Error de carga, status:" + res.status);
                 return res.json();
             })
             .then((data) => {
@@ -26,15 +28,15 @@ export function ProductsProvider ({ children }) {
                 console.error("Error de carga de API", err);
                 setError(err.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => setTimeout(() => setIsLoading(false), 500));
     }, []);
 
     // Fetch de novedades desde mi json sobre el contexto
     useEffect(() => {
         setIsLoading(true);
-        fetch("https://685340fb0594059b23d07cd8.mockapi.io/api/novedades")
+        fetch(API_URL_NEWS)
             .then((res) => {
-                if (!res.ok) throw new Error("Error de carga, status:" + response.status);
+                if (!res.ok) throw new Error("Error de carga, status:" + res.status);
                 return res.json();
             })
             .then((data) => {
@@ -45,8 +47,28 @@ export function ProductsProvider ({ children }) {
                 console.error("Error de carga de API", err);
                 setError(err.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => setTimeout(() => setIsLoading(false), 500));
     }, []);
+
+
+    const fetchProducts = async () => {
+        setIsLoading(true);
+        try {
+            const res = await fetch(API_URL_PRODUCTS);
+            if (!res.ok) throw new Error("Error de carga, status:" + res.status);
+            const data = await res.json();
+            console.log("Productos recibidos: " + data);
+            setProducts(data)
+        } catch (err) {
+            const errorMessage = err.name === 'TypeError'
+                ? "No se pudo conectar con el servidor"
+                : err.message;
+            setError(errorMessage);
+            console.error("Error de carga de API", err);
+        } finally {
+            setTimeout(() => setIsLoading(false), 500);
+        }
+    };
 
     return (
         <ProductsContext.Provider
@@ -55,6 +77,8 @@ export function ProductsProvider ({ children }) {
                 error, // Manejo de errores
                 products, // Productos
                 news, // Novedades
+                fetchProducts, // Carga productos
+                API_URL_PRODUCTS
             }}
         >
             {children}
@@ -75,3 +99,5 @@ const getProduct = (id) => {
     return selectedProduct;
 }
 export default getProduct;
+
+

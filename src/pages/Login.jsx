@@ -15,7 +15,7 @@ export default function Login()
   const handleSubmit = (e) => {
     e.preventDefault();
     if (login(user, pass)) {
-      navigate("/admin");
+      navigate("/");
     } else {
       setError("Usuario o contraseña inválidos");
     }

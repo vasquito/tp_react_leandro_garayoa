@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.adm-products {
+    margin: 0px;
+    padding-top: 30px !important;  
+    background: #f6f9fc;
+    padding-bottom: 130px !important;  
+    
+}
+.adm-products .table-comics {
+    --bs-table-color: #F2D324;
+    --bs-table-bg: #f77e7e;
+    --bs-table-border-color: #f77e7e;
+    --bs-table-striped-bg: #f77e7e;
+    --bs-table-striped-color: #F2D324;
+    --bs-table-active-bg: #f77e7e;
+    --bs-table-active-color: #F2D324;
+    --bs-table-hover-bg: #f77e7e;
+    --bs-table-hover-color: #F2D324;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+.abm-products-list .table-comics .header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+.adm-products h1.title {
+  text-align: center;
+  font-size: 1.7em;
+  font-family: "Racing Sans One", serif;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 0px;
+}
+
+.abm-products-list .image-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.abm-products-list img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .cart-items img {
+    width: 120%;
+    height: 100%;
+  }
+}
+
+Button.agregar {
+  border-radius: 5px;
+  border: 1px solid #F02B2B;
+  background-color: #F02B2B;
+  color: #F2D324;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+Button.agregar:hover,
+Button.agregar:hover {
+  border: 1px solid #f77e7e;
+  background-color: #f77e7e;
+  color: #F2D324;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+Button.agregar:focus,
+Button.agregar:focus {
+  border: 1px solid #f77e7e;
+  background-color: #f77e7e;
+  color: #F2D324;
+  outline: 2px solid #F02B2B; 
+  outline-offset: 2px;
+}

@@ -40,27 +40,48 @@
 }
 
 .cart-list {
-  position: relative;
-  background: white;
-  margin-bottom: 30px;
-  padding: 20px;
+  padding: 0px;
 }
 
-.cart-list .header {
+.cart-list .table-dark .header {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
-  color: #0f3460;
+  color: white;
 }
 .cart-list .item {
   text-align: center;
   font-size: 16px;
 }
+
+.cart-list .item button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+button.addCart {
+    background: none;
+    border: 1px solid rgb(3 0 71 / 9%);
+    color: #1d5d0d; 
+}
+button.desCart {
+    background: none;
+    border: 1px solid rgb(3 0 71 / 9%);
+    color: #bf4f4f;
+}
+
 @media (max-width: 767px) {
-  .cart-list .header {
+  .cart-list .table-dark .header {
     font-size: 10px;
   }
   .cart-list .item {
+    font-size: 10px;
+  }
+  .cart-list .item button {
+    width: 20px;
+    height: 20px;
+    border-radius: 2,5px;
     font-size: 10px;
   }
 }
@@ -77,47 +98,11 @@
   object-fit: contain;
 }
 @media (max-width: 767px) {
-  .cart-items .container > .row {
-    flex-wrap: wrap-reverse !important;
-  }
   .cart-items img {
     width: 120%;
     height: 100%;
     max-width: 150px;
   }
-}
-
-.cartControl {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-}
-.cartControl button {
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  font-size: 24px;
-}
-
-@media (max-width: 767px) {
-  .cartControl button {
-    width: 20px;
-    height: 20px;
-    border-radius: 2,5px;
-    font-size: 10px;
-  }
-}
-
-button.addCart {
-    background: none;
-    border: 1px solid rgb(3 0 71 / 9%);
-    color: #1d5d0d; 
-}
-
-button.desCart {
-    background: none;
-    border: 1px solid rgb(3 0 71 / 9%);
-    color: #bf4f4f;
 }
 
 button.vaciar {
@@ -129,15 +114,49 @@ button.vaciar {
 
 .cart-items .vaciar-carrito {
   margin-top: 20px;
-  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
 }
 
-button.pagar {
+.cart-items .enviar-pedido {
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
+.wsp-icon {
+  height: 26px;
+}
+button.enviar {
   border: 1px solid #F02B2B;
   border-radius: 5px;
   background-color: #F02B2B;
   color: #F2D324;
   font-size: 24px;
   font-weight: bold;
+}
+
+
+
+@media (max-width: 990px) {
+  .wsp-icon {
+    height: 20px;
+  }
+  button.enviar {
+    font-size: 22px;
+  }
+  .cart-items .vaciar-carrito {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:767px) {
+  .wsp-icon {
+    height: 16px; 
+  }
+  button.enviar {
+    font-size: 18px;
+  }
+  .cart-items .vaciar-carrito {
+    font-size: 12px;
+  }
 }

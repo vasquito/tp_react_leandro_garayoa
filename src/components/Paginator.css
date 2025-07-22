@@ -1,0 +1,56 @@
+Button.num-enabled,
+Button.num-enabled:active,
+Button.anterior,
+Button.anterior:active,
+Button.siguiente,
+Button.siguiente:active
+ {
+  margin: .2rem !important;
+  border: 1px solid #F02B2B;
+  border-radius: 5px;
+  background-color: #F02B2B;
+  color: #F2D324;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+Button.num-disabled {
+  margin: .2rem !important;
+  border: 1px solid #F02B2B;
+  border-radius: 5px;
+  background-color: #F2D324;
+  color: #f77e7e;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+Button.anterior:hover,
+Button.siguiente:hover,
+Button.num-enabled:hover,
+Button.num-disabled:hover {
+  border: 1px solid #f77e7e;
+  background-color: #f77e7e;
+  color: #F2D324;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+Button.anterior:focus,
+Button.siguiente:focus,
+Button.num-enabled:focus,
+Button.num-disabled:focus {
+  border: 1px solid #f77e7e;
+  background-color: #f77e7e;
+  color: #F2D324;
+  outline: 2px solid #F02B2B; 
+  outline-offset: 2px;
+}
+
+Button.anterior:disabled,
+Button.siguiente:disabled {
+  background-color: #696969;   /* Fondo gris claro */
+  color: #e2f2b2;              
+  cursor: not-allowed;           /* Cursor de prohibido */
+  opacity: 0.6;                  /* Transparencia visual */
+  border: 1px solid #696969;   /* Borde tenue */
+}
